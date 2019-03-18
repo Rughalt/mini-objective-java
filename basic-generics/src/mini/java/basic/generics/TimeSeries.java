@@ -2,7 +2,7 @@ package mini.java.basic.generics;
 
 import java.lang.reflect.Array;
 
-public class TimeSeries<T> {
+public class TimeSeries<T extends Number> {
     private final String name;
     private final T[] data;
 
@@ -11,12 +11,13 @@ public class TimeSeries<T> {
         this.data = data;
     }
 
-    public static <T> TimeSeries<T> empty(String name, Integer length, Class<T> clazz) {
+    public static <U extends Number> TimeSeries<U> empty(String name, Integer length, Class<U> clazz) {
         @SuppressWarnings("unchecked")
-        TimeSeries<T> timeSeries = new TimeSeries<>(name, (T[]) Array.newInstance(clazz, length));
+        TimeSeries<U> timeSeries = new TimeSeries<>(name, (U[]) Array.newInstance(clazz, length));
 
         return timeSeries;
     }
+
 
     public String getName() {
         return name;
@@ -34,10 +35,22 @@ public class TimeSeries<T> {
         return data[data.length - 1];
     }
 
-    public <R> boolean nameEquals(TimeSeries<R> that) {
+    public float firstFloat() {
+        if (data == null)
+            throw new IndexOutOfBoundsException();
+        return data[data.length - 1].floatValue();
+    }
+
+    public <R extends Number> boolean nameEquals(TimeSeries<R> that) {
         return this.getName().equals(that.getName());
     }
 
 
+    public static  <R extends Number, U extends Number> boolean staticNameEquals(TimeSeries<R> l,TimeSeries<U> r) {
+        return l.getName().equals(r.getName());
+    }
 
+    public T[] getData() {
+        return data;
+    }
 }
