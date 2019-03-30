@@ -1,6 +1,5 @@
 package mini.java.basic.interfaces;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +34,6 @@ public class SeriesTest {
         data.add("Ala");
         data.add("Makota");
         StringTimeSeries i = new StringTimeSeries("Name",data);
-        ((ConsolePrintable)i).printToSystemOut();
+        ((Printable)i).printToSystemOut();
     }
 }

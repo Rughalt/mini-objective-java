@@ -2,9 +2,14 @@ package mini.java.basic.interfaces;
 
 import java.util.List;
 
-public class StringTimeSeries extends AbstractTimeSeries<String> implements ConsolePrintable {
+public class StringTimeSeries extends AbstractTimeSeries<String> implements Printable, Summable<String> {
     public StringTimeSeries(String name, List<String> data) {
         super(name, data);
+    }
+
+    @Override
+    public String createElementInstance() {
+        return "";
     }
 
     @Override

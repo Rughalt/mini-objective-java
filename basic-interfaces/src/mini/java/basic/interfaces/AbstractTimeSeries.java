@@ -2,7 +2,7 @@ package mini.java.basic.interfaces;
 
 import java.util.List;
 
-public abstract class  AbstractTimeSeries<T> {
+public abstract class AbstractTimeSeries<T> {
     List<T> data;
 
 
@@ -14,18 +14,30 @@ public abstract class  AbstractTimeSeries<T> {
     }
 
 
-    // Dodaje dane do data
+    /**
+     * Dodaje obiekt do listy
+     * @param o Obiekt do dodania
+     */
     public void add(T o) {
         data.add(o);
     }
 
-    // Usuwa daną z data
-    public void remove(Integer i) {
+
+    /**
+     * Usuwa obiekt z listy
+     * @param i ondeks obiektu to usunięcia
+     */
+    public void remove(int i) {
         data.remove(i);
     }
 
-    // Zwraca obiekt o odpowiednim indeksie
-    public T get(Integer i) {
+
+    /**
+     * Zwraca obiekt z listy
+     * @param i Indeks obiektu do zwrócenia
+     * @return Obiekt na konkretnym miejscu
+     */
+    public T get(int i) {
         return data.get(i);
     }
 
@@ -38,6 +50,11 @@ public abstract class  AbstractTimeSeries<T> {
         this.name = name;
     }
 
-    // Liczy sumę, abstrakcyjna
-    public abstract T sum();
+
+    /**
+     * Tworzy nowy obiekt klasy T. Pozwala to na proste obejście problemu z inicjalizacją klasy generycznej jeżeli
+     * klasy rozszerzające AbstractTimeSeries poprawnie zaimplementują tę metodę.
+     * @return Nowy obiekt klasy T.
+     */
+    public abstract T createElementInstance();
 }
