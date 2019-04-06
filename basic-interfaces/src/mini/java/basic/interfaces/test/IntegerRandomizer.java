@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Klasa IntegerRandomizer generuje nowe, losowe liczby całkowite w podanym przedziale
  */
-public class IntegerRandomizer {
+public class IntegerRandomizer extends AbstractRandomizer<Integer> implements TypeAware<Integer> {
     private Random random;
     long seed = 0;
 
@@ -24,35 +24,14 @@ public class IntegerRandomizer {
         return random.nextInt(limit);
     }
 
-    public List<Integer> nextList(int length, int limit) {
-        List<Integer> al = new ArrayList<>();
-        for (int i = 0; i < length; i++) {
-            al.add(next(limit));
-        }
-        return al;
-    }
 
-    public Integer[] nextArray(int length, int limit) {
-        return nextList(length, limit).toArray(new Integer[length]);
-    }
 
-    public void reseed() {
-        random = new Random();
-    }
-
-    public long getSeed() {
-        return seed;
-    }
-
-    public void setSeed(long seed) {
-        random = new Random(seed);
-        this.seed = seed;
-    }
-
+    @Override
     public Integer getEmpty() {
         return 0;
     }
 
+    @Override
     public Class getElementClass() {
         return Integer.class;
     }
