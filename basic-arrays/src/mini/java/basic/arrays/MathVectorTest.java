@@ -128,4 +128,11 @@ public class MathVectorTest {
         MathVector vector1 = new MathVector(5);
         assertFalse(vector1.isRandomizedMethod());
     }
+
+
+    @org.junit.Test
+    public void lombokTest() {
+        MathVectorLombok mlLombok = new MathVectorLombok();
+        ml.
+    }
 }

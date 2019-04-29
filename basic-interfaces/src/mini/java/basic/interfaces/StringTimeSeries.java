@@ -1,9 +1,11 @@
 package mini.java.basic.interfaces;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 public class StringTimeSeries extends AbstractTimeSeries<String> implements Printable, Summable<String> {
-    public StringTimeSeries(String name, List<String> data) {
+    public StringTimeSeries(@Nullable String name, List<String> data) {
         super(name, data);
     }
 

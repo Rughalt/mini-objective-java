@@ -19,7 +19,7 @@ public class RandomizerTests {
     public void next() {
         AbstractRandomizer<Integer> integerRandomizer = new IntegerRandomizer();
         AbstractRandomizer<String> stringRandomizer = new StringRandomizer();
-
+        //TODO: asdasdasdsa
         for (int i = 0; i < 1000; i++) {
             Integer testedInteger = integerRandomizer.next(10);
             assertTrue(testedInteger >= 0 && testedInteger < 10);
@@ -29,7 +29,6 @@ public class RandomizerTests {
 
     }
 
-    @Test
     public void nextList() {
         AbstractRandomizer<Integer> integerRandomizer = new IntegerRandomizer();
         AbstractRandomizer<String> stringRandomizer = new StringRandomizer();

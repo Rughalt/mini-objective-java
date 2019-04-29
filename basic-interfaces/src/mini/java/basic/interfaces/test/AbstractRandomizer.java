@@ -5,10 +5,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Generates random object for generic type.
+ * To implement calss you need to provide next() method to generate new rendom object ot given type.
+ *
+ * @see AbstractRandomizer#next(int)
+ * @param <T> Type
+ */
 public abstract class AbstractRandomizer<T> implements TypeAware<T> {
     protected Random random;
     long seed = 0;
 
+    /**
+     * Returns new random object of type T
+     * <B>This is only method you need to implement</B>
+     *
+     * @param limit Length of the object
+     * @return New random object
+     *
+     */
+
+    @Deprecated
     public abstract T next(int limit);
 
     public List<T> nextList(int length, int limit) {
