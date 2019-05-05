@@ -14,6 +14,7 @@ public class TextFileStreamsTests {
         if (Files.exists(Paths.get("test.txt"))) Files.delete(Paths.get("test.txt"));
         File fout = new File("test.txt");
         FileOutputStream fos = new FileOutputStream(fout);
+
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
         bw.write("Test");
         bw.newLine();
@@ -28,7 +29,7 @@ public class TextFileStreamsTests {
         FileOutputStream fos = new FileOutputStream(fout);
         PrintWriter bw = new PrintWriter(new OutputStreamWriter(fos));
         bw.println("Test");
-        bw.println("Abc");
+        bw.println("Abc 2");
         bw.close();
     }
 

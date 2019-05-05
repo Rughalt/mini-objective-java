@@ -1,5 +1,6 @@
 package mini.java.basic.iostreams;
 
+import com.google.gson.annotations.Expose;
 import mini.java.basic.interfaces.test.IntegerRandomizer;
 import mini.java.basic.interfaces.test.StringRandomizer;
 

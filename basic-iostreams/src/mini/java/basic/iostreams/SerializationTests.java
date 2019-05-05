@@ -8,6 +8,8 @@ import org.junit.Assert;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class SerializationTests {
 
@@ -70,5 +72,19 @@ public class SerializationTests {
         Assert.assertEquals(object.getIntegerField(), deserialized.getIntegerField());
         Assert.assertEquals(object.getStringField(), deserialized.getStringField());
         Assert.assertNull(deserialized.getStringList());
+    }
+
+    @org.junit.Test
+    public void serializeDeserializeJsonMapTest() throws IOException {
+        if (Files.exists(Paths.get("gson_serialized.json"))) Files.delete(Paths.get("gson_serialized.json"));
+        Gson serializer = new Gson();
+        SerializableObject object = new SerializableObject();
+        FileWriter writer = new FileWriter("gson_serialized.json");
+        serializer.toJson(object, writer);
+        writer.close();
+
+        Gson deserializer = new Gson();
+        Map<Object,Object> deserialized = deserializer.fromJson(new FileReader("gson_serialized.json"), LinkedHashMap.class);
+
     }
 }
