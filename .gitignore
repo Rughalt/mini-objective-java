@@ -2,3 +2,9 @@
 \.idea/
 out/
 *.jar
+
+gson_serialized\.json
+
+java_serialized\.bin
+
+test\.txt
