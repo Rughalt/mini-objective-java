@@ -19,5 +19,6 @@
     </orderEntry>
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.5" level="application" />
     <orderEntry type="module" module-name="basic-interfaces" />
+    <orderEntry type="library" name="org.projectlombok:lombok:1.18.6" level="application" />
   </component>
 </module>
