@@ -8,3 +8,5 @@ gson_serialized\.json
 java_serialized\.bin
 
 test\.txt
+
+\.DS_Store
