@@ -1,4 +1,4 @@
-# Zadanie - Tablice i dziedziczenie
+# 2018/2019 - Zadanie 1 - Tablice i dziedziczenie
 
 Twoim zadaniem jest napisanie dwóch klas implementujących metody tak, 
 aby napisane testy jednostkowe wykonały się poprawnie. Sygnatury klas to:
