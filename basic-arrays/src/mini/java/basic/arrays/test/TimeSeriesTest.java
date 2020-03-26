@@ -247,7 +247,7 @@ public class TimeSeriesTest {
     }
 
     /***
-     * Sprawdzenie metody isAnonymous() na klasie AnonymousTimeSeries rzutowanej na TimeSeries (jako property)
+     * Sprawdzenie metody isAnonymous() na klasie AnonymousTimeSeries rzutowanej na TimeSeries
      * @difficulty 1
      */
     @org.junit.Test
@@ -256,23 +256,4 @@ public class TimeSeriesTest {
         assertTrue(timeSeries1.isAnonymous());
     }
 
-    /***
-     * Sprawdzenie metody isAnonymous() na klasie bazowej TimeSeries (jako property)
-     * @difficulty 1
-     */
-    @org.junit.Test
-    public void isAnonymousPropertyBaseClass() {
-        TimeSeries timeSeries1 = new TimeSeries("TS1",1,2,3);
-        assertFalse(timeSeries1.isAnonymousByProperty());
-    }
-
-    /***
-     * Sprawdzenie metody isAnonymous() na klasie AnonymousTimeSeries rzutowanej na TimeSeries (jako property)
-     * @difficulty 1
-     */
-    @org.junit.Test
-    public void isAnonymousPropertyInheritedClass() {
-        TimeSeries timeSeries1 = new AnonymousTimeSeries(5);
-        assertTrue(timeSeries1.isAnonymousByProperty());
-    }
 }

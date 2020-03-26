@@ -13,7 +13,7 @@ public class Main {
 }
 ```
 
-Przydatne do poruszania się po środowisku IntelliJ IDEA
+#### Przydatne do poruszania się po środowisku IntelliJ IDEA
 - Sktóry klawiaturowe - https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
 - Szybki start dla IDEA - https://www.jetbrains.com/help/idea/getting-started.html
 - Hello World w Java + IDEA - https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html
@@ -41,12 +41,14 @@ public class Car extends Vehicle {
 public class Bicycle extends Vehicle {
     private boolean twoPerson;
 }
-
 ```
 
-Przydatne linki
+#### Przydatne linki
 - Dziedziczenie - opis na Wikipedia (teoria) - https://pl.wikipedia.org/wiki/Dziedziczenie_%28programowanie%29
 - Dziedziczenie - tutorial od Oracle - https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html
+
+#### Poprzednie zadania punktowane
+- [Rok 2018/2019](basic-arrays/src/mini/java/basic/arrays/test/README.md)
 
 ## Oprogramowanie
 - Licencje Jetbrains dla studentów - https://www.jetbrains.com/student/
