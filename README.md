@@ -50,6 +50,11 @@ public class Bicycle extends Vehicle {
 #### Poprzednie zadania punktowane
 - [Rok 2018/2019](basic-arrays/src/mini/java/basic/arrays/test/README.md)
 
+
+## Jak skutecznie zabrać się za rozwiązanie zadania punktowanego
+[Instrukcja ze zrzutami ekranu](https://github.com/Rughalt/mini-objective-java/wiki/Zadania-Punktowane)
+
+
 ## Oprogramowanie
 - Licencje Jetbrains dla studentów - https://www.jetbrains.com/student/
 - Java 11/8 - Amazon Corretto - https://docs.aws.amazon.com/corretto/index.html

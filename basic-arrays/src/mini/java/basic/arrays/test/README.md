@@ -40,4 +40,7 @@ Pamiętaj o możliwości stawiania breakpointów 🛑.
 Najprościej, jeśli utowrzysz nowy projekt, dodasz plik z testem i pozwolisz `Alt+Enter` 
 na nazwie pakietu wykonać swoją magię 
 
+## Jak skutecznie zabrać się za rozwiązanie zadania
+[Instrukcja ze zrzutami ekranu](https://github.com/Rughalt/mini-objective-java/wiki/Zadania-Punktowane)
+
 ## Powodzenia!
