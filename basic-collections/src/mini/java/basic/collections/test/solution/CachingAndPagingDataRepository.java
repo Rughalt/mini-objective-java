@@ -1,7 +1,7 @@
-package mini.java.basic.collections.test;
+package mini.java.basic.collections.test.solution;
 
 import java.io.IOException;
-import java.util.Collection;
+import java.util.*;
 
 /**
  * Caching and paging data repository

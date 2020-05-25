@@ -1,4 +1,4 @@
-package mini.java.basic.collections.test;
+package mini.java.basic.collections.test.solution;
 
 import org.junit.Assert;
 

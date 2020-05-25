@@ -9,6 +9,62 @@ import static org.junit.Assert.assertEquals;
 public class CollectionsTest {
 
     @org.junit.Test
+    public void basics() {
+
+// Deklaracja listy przechowującej obiekty typu string
+List<String> stringList = new ArrayList<String>();
+
+// Dodawanie elementów do listy
+stringList.add("Element 1");
+stringList.add("Element 2");
+stringList.add("Element 4");
+stringList.add("Element 5");
+stringList.add("Element 6");
+
+// Pobieranie elementu z listy
+String elementFromList = stringList.get(0);
+System.out.println(elementFromList);
+
+// Operacje strumieniowe (uwaga na wyrażenie lambda!)
+stringList.forEach(System.out::println);
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+// Deklaracja mapy przechowującej obiekty typu Integer z kluczem typu String
+Map<String,Integer> stringToIntegetMap = new HashMap<>();
+
+// Dodawanie elementów do mapy
+stringToIntegetMap.put("Element 1",1);
+stringToIntegetMap.put("Element 2",2);
+stringToIntegetMap.put("Element 4",3);
+stringToIntegetMap.put("Element 5",4);
+stringToIntegetMap.put("Element 6",5);
+
+// Pobieranie elementu z mapy
+Integer elementFromMap = stringToIntegetMap.get("Element 4");
+System.out.println("Element pod kluczem 'Element 4': " + elementFromMap);
+
+// Operacje strumieniowe (uwaga na wyrażenie lambda!)
+stringToIntegetMap.forEach((k, v) -> System.out.printf("Key: %s, Value %s\n", k, v));
+
+
+// Deklaracja zbioru przechowującej obiekty typu string
+Set<String> stringSet = new HashSet<String>();
+
+// Dodawanie elementów do zbioru
+stringSet.add("Element 1");
+stringSet.add("Element 4");
+stringSet.add("Element 2");
+stringSet.add("Element 5");
+stringSet.add("Element 90");
+
+// Operacje strumieniowe (uwaga na wyrażenie lambda!)
+stringSet.forEach(System.out::println);
+    }
+
+    @org.junit.Test
     public void listAdd() {
         List<String> l = new ArrayList<>();
         l.add("a");

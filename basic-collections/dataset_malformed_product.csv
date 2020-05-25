@@ -1,0 +1,11 @@
+products;1;Eggs;0.29;true
+products;2;Sugar;1.99;true
+products;3;Milk;1.09;true
+products;4;Honey;2.99;false
+products;5;Mascarpone;1.99;true
+products;6;Tomato;3.99;true
+products;7;Printer Paper;2.99;false
+products;8;Printer Toner;12.99;false
+products;9;Thermal Paste;hwaiaw4uyci4y
+warehouses;2;AU;true;1,2,3,4,5,6;
+warehouses;3;CA;true;;

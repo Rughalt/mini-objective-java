@@ -1,13 +1,8 @@
-package mini.java.basic.collections.test;
+package mini.java.basic.collections.test.solution;
 
 import java.io.IOException;
 import java.util.*;
 
-
-/**
- * This class represents simple data repository (database data access interface)
- * You should not change this class
- */
 public class SimpleDataRepository {
     private Map<Integer, Product> products;
     private Map<Integer, Warehouse> warehouses;
@@ -131,7 +126,7 @@ public class SimpleDataRepository {
     private void fakeProcess() {
         try {
             calls++;
-            Thread.currentThread().sleep(1000);
+            Thread.currentThread().sleep(0);
         } catch (InterruptedException e) {
             // Sleep interrupted
         }
