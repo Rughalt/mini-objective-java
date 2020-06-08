@@ -20,6 +20,7 @@ public class TextFileStreamsTests {
         bw.newLine();
         bw.write("Abc");
         bw.close();
+        fos.close();
     }
 
     @org.junit.Test
@@ -31,6 +32,7 @@ public class TextFileStreamsTests {
         bw.println("Test");
         bw.println("Abc 2");
         bw.close();
+        fos.close();
     }
 
     @org.junit.Test
@@ -46,10 +48,17 @@ public class TextFileStreamsTests {
             bw.newLine();
         }
         bw.close();
-
+        fos.close();
         BufferedReader br = new BufferedReader(new FileReader("test.txt"));
         while (br.read() != -1) {
         }
+        br.close();
+        BufferedReader br2 = new BufferedReader(new FileReader("test.txt"));
+        for (int i = 0; i< 10; i++) {
+            String a = br2.readLine();
+            System.out.println(a);
+        }
+        br2.close();
     }
 
     @org.junit.Test

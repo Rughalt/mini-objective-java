@@ -8,61 +8,6 @@ import static org.junit.Assert.assertEquals;
 
 public class CollectionsTest {
 
-    @org.junit.Test
-    public void basics() {
-
-// Deklaracja listy przechowującej obiekty typu string
-List<String> stringList = new ArrayList<String>();
-
-// Dodawanie elementów do listy
-stringList.add("Element 1");
-stringList.add("Element 2");
-stringList.add("Element 4");
-stringList.add("Element 5");
-stringList.add("Element 6");
-
-// Pobieranie elementu z listy
-String elementFromList = stringList.get(0);
-System.out.println(elementFromList);
-
-// Operacje strumieniowe (uwaga na wyrażenie lambda!)
-stringList.forEach(System.out::println);
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
-// Deklaracja mapy przechowującej obiekty typu Integer z kluczem typu String
-Map<String,Integer> stringToIntegetMap = new HashMap<>();
-
-// Dodawanie elementów do mapy
-stringToIntegetMap.put("Element 1",1);
-stringToIntegetMap.put("Element 2",2);
-stringToIntegetMap.put("Element 4",3);
-stringToIntegetMap.put("Element 5",4);
-stringToIntegetMap.put("Element 6",5);
-
-// Pobieranie elementu z mapy
-Integer elementFromMap = stringToIntegetMap.get("Element 4");
-System.out.println("Element pod kluczem 'Element 4': " + elementFromMap);
-
-// Operacje strumieniowe (uwaga na wyrażenie lambda!)
-stringToIntegetMap.forEach((k, v) -> System.out.printf("Key: %s, Value %s\n", k, v));
-
-
-// Deklaracja zbioru przechowującej obiekty typu string
-Set<String> stringSet = new HashSet<String>();
-
-// Dodawanie elementów do zbioru
-stringSet.add("Element 1");
-stringSet.add("Element 4");
-stringSet.add("Element 2");
-stringSet.add("Element 5");
-stringSet.add("Element 90");
-
-// Operacje strumieniowe (uwaga na wyrażenie lambda!)
-stringSet.forEach(System.out::println);
-    }
 
     @org.junit.Test
     public void listAdd() {
@@ -103,18 +48,6 @@ stringSet.forEach(System.out::println);
                              .collect(Collectors.toList());
         List<String> l2 = new ArrayList<>();
 
-        list.forEach(element -> {
-            if (!element.equals("b"))
-                l2.add(element);
-        });
-
-        List<String> l3 = new ArrayList<>();
-        for (String element : list) {
-            if (!element.equals("b"))
-                l3.add(element);
-        }
-
-
         assertEquals(l, List.of("a"));
     }
 
@@ -135,14 +68,16 @@ stringSet.forEach(System.out::println);
         hashSet.forEach(s -> System.out.printf("%s,", s));
         System.out.println();
         System.out.print("LinkedHashSet: ");
-        linkedHashSet.forEach(s -> System.out.printf("%s,", s));
+        for (String s1 : linkedHashSet) {
+            System.out.printf("%s,", s1);
+        }
         System.out.println();
         hashSet.add("c");
         linkedHashSet.add("c");
         hashSet.add("d");
         linkedHashSet.add("d");
         System.out.print("Hashset: ");
-        hashSet.forEach(s -> System.out.printf("%s,", s));
+        hashSet.forEach(s1 -> System.out.printf("%s,", s1));
         System.out.println();
         System.out.print("LinkedHashSet: ");
         linkedHashSet.forEach(s -> System.out.printf("%s,", s));
@@ -181,7 +116,7 @@ stringSet.forEach(System.out::println);
 
 
         Integer a = 3;
-        hashMap.get(a.getClass()).print(a);
+        hashMap.getOrDefault(a.getClass(), new DefaultLogger()).print(a);
         Object b = new String("3");
         hashMap.getOrDefault(b.getClass(), new DefaultLogger()).print(b);
         Object c = new ArrayList<>();
@@ -242,11 +177,17 @@ stringSet.forEach(System.out::println);
 
     }
 
+
     private void printForObject(Map<Class, Printer> hashMap, Object d) throws StupidException {
         try {
             hashMap.get(d.getClass()).print(d);
         } catch (NullPointerException e) {
-            throw new StupidException(List.of("stupid"));
+
+            new DefaultLogger().print(String.format("Exception ifnored for %s", d.getClass().toGenericString()));
+            // Throws RuntimeException does not need to be handled
+            // throw new RuntimeException();
+            // Throw normal Exception, needs to be either try{}/catched{} or added to method definition (throws)
+            // throw new StupidException(List.of("stupid"));
         } catch (Throwable e) {
             e.printStackTrace();
         } finally {
@@ -254,9 +195,8 @@ stringSet.forEach(System.out::println);
         }
     }
 
-    private class StupidException extends Throwable {
+    private class StupidException extends Exception {
         private List<String> a;
-
         public StupidException(List<String> a) {
             this.a = a;
         }

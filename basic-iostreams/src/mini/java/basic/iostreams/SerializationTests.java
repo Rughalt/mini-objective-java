@@ -17,10 +17,9 @@ public class SerializationTests {
     public void serializeDeserializeJavaSerializableTest() throws IOException, ClassNotFoundException {
         if (Files.exists(Paths.get("java_serialized.bin"))) Files.delete(Paths.get("java_serialized.bin"));
         SerializableObject object = new SerializableObject();
-        FileOutputStream fileOut = new FileOutputStream("java_serialized.bin");
-        ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-        objectOut.writeObject(object);
-        objectOut.close();
+        try (FileOutputStream fileOut = new FileOutputStream("java_serialized.bin"); ObjectOutputStream objectOut = new ObjectOutputStream(fileOut)) {
+            objectOut.writeObject(object);
+        }
 
         ObjectInputStream objectIn = new ObjectInputStream(new FileInputStream("java_serialized.bin"));
         SerializableObject deserialized = (SerializableObject)objectIn.readObject();
